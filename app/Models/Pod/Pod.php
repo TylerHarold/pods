@@ -61,5 +61,12 @@ class Pod extends Model
         return $this->hasMany('App\Models\Pod\PodRank', 'pod_id', 'id');
     }
 
-
+    /**
+     * Grabs the creator of the pod
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function creator() {
+        return $this->belongsTo(User::class);
+    }
 }
