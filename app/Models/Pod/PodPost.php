@@ -29,7 +29,7 @@ class PodPost extends Model
      * @var array
      */
     protected $hidden = [
-        
+
     ];
 
     /**
