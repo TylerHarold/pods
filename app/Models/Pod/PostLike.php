@@ -39,4 +39,23 @@ class PostLike extends Model
     protected $casts = [
 
     ];
+
+    /**
+     * Grabs the user of the post like
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user() {
+        return $this->belongsTo('App\Models\User', 'id', 'user_id');
+    }
+
+    /**
+     * Grabs the post of the like
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function post() {
+        return $this->belongsTo('App\Models\Pod\PodPost', 'id', 'post_id');
+    }
+
 }
