@@ -16,6 +16,7 @@ class CreatePodsTable extends Migration
         Schema::create('pods', function (Blueprint $table) {
             $table->id();
             $table->integer('name');
+            $table->integer('creator_id');
             $table->text('short_description');
             $table->text('long_description');
             $table->string('avatar');

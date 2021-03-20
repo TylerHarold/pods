@@ -19,6 +19,7 @@ class Pod extends Model
      */
     protected $fillable = [
         'name',
+        'creator_id',
         'short_description',
         'long_description',
         'avatar'
@@ -41,4 +42,24 @@ class Pod extends Model
     protected $casts = [
         'avatar' => null
     ];
+
+    /**
+     * Grabs all pod's posts
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts() {
+        return $this->hasMany('App\Models\Pod\PodPost', 'pod_id', 'id');
+    }
+
+    /**
+     * Grabs all pod's ranks
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function ranks() {
+        return $this->hasMany('App\Models\Pod\PodRank', 'pod_id', 'id');
+    }
+
+
 }
