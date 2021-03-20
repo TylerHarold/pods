@@ -7,9 +7,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+// Table
+// ID
+// Username
+// Email
+// Password
+// Avatar
+// Administrator - Bool
+// Joined_Pods - JSON (Text)
+
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+
+    protected $connection = "mysql";
+    protected $table = "users";
 
     /**
      * The attributes that are mass assignable.
@@ -17,9 +29,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'username', 'email', 'password', 'avatar', 'administrator', 'joined_pods'
     ];
 
     /**
@@ -30,6 +40,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'administrator',
     ];
 
     /**
@@ -39,5 +50,8 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'joined_pods' => null,
+        'avatar' => null,
+        'administrator' => false
     ];
 }
