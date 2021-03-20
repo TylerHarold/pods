@@ -18,7 +18,7 @@ class PostLike extends Model
      * @var array
      */
     protected $fillable = [
-        'pod_id',
+        'post_id',
         'user_id'
     ];
 
