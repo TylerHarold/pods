@@ -54,4 +54,31 @@ class User extends Authenticatable
         'avatar' => null,
         'administrator' => false
     ];
+
+    /**
+     * Grabs all user's posts
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function posts() {
+        return $this->hasMany('App\Models\Pod\PodPost', 'author_id', 'id');
+    }
+
+    /**
+     * Grabs all user's comments
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function comments() {
+        return $this->hasMany('App\Models\Post\PostComment', 'author_id', 'id');
+    }
+
+    /**
+     * Grabs all user's likes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function likes() {
+        return $this->hasMany('App\Models\Post\PostLike', 'user_id', 'id');
+    }
 }
