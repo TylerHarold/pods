@@ -1,0 +1,42 @@
+<?php
+
+namespace App\Models\Pod;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class PostLike extends Model
+{
+    use HasFactory;
+
+    protected $connection = "mysql";
+    protected $table = "pod_post_likes";
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'pod_id',
+        'user_id'
+    ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+
+    ];
+}
