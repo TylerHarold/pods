@@ -40,4 +40,22 @@ class PostComment extends Model
     protected $casts = [
 
     ];
+
+    /**
+     * Grabs the creator of the comment
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function creator() {
+        return $this->belongsTo('App\Models\User', 'id', 'author_id');
+    }
+
+    /**
+     * Grabs all comment's likes
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function likes() {
+        return $this->hasMany('App\Models\Post\CommentLike', 'comment_id', 'id');
+    }
 }
