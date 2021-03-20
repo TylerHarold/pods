@@ -40,4 +40,13 @@ class PodPost extends Model
     protected $casts = [
 
     ];
+
+    /**
+     * Grabs the creator of the post
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function creator() {
+        return $this->belongsTo('App\Models\User', 'id', 'author_id');
+    }
 }

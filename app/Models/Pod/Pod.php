@@ -67,6 +67,6 @@ class Pod extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function creator() {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo('App\Models\User', 'id', 'creator_id');
     }
 }
