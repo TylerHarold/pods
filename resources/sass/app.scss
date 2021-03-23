@@ -8,9 +8,67 @@
     /*
         Illustrations
     */
-    --stroke: #010101;
+    --stroke: #111114;
     --main: #fffffe;
     --highlight: #7f5af0;
     --secondary: #72757e;
     --tertiary: #2cb67d;
+}
+
+
+h1 {
+    font-size: 67.34px;
+    color: var(--headline);
+}
+
+h2 {
+    font-size: 50.52px;
+    color: var(--headline);
+}
+
+h3 {
+    font-size: 37.90px;
+    color: var(--headline);
+}
+
+h4, h5, h6 {
+    font-size: 28.43px;
+    color: var(--headline);
+}
+
+p {
+    font-size: 28.43px;
+    color: var(--paragraph);
+}
+
+.btn-primary {
+    padding: 25px;
+    color: var(--headline);
+    background-color: var(--button);
+}
+
+.btn-primary:hover {
+    color: var(--background);
+}
+
+.btn-secondary {
+    padding: 25px;
+    color: var(--button);
+    border: 5px solid var(--button);
+}
+
+.btn-secondary:hover {
+    color: var(--headline);
+}
+
+input {
+    background: transparent;
+    padding: 20px;
+    border: 5px solid var(--stroke);
+    color: var(--headline);
+}
+
+::placeholder {
+    color: var(--paragraph);
+    opacity: 0.5;
 }
