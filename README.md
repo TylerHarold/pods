@@ -1,1 +1,1 @@
-Say goodbye to unnecessary group chats.
+Say goodbye to unnecessary group chats. :)
