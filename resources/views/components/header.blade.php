@@ -15,7 +15,7 @@
                     <a class="nav-link mx-5" href="/">Home</a>
                 </li>
                 <li class="nav-item my-auto">
-                    <a class="nav-link mx-5" href="/">About</a>
+                    <a class="nav-link mx-5" href="/about">About</a>
                 </li>
                 <li class="nav-item my-auto">
                     <a class="nav-link mx-5" href="/">Team</a>

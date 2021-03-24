@@ -8,7 +8,7 @@
         <div class="col-md-6 col-sm-12 my-auto">
             <form class="m-5" method="POST" action="/register">
                 {{ csrf_field() }}
-                <h3>Register</h3>
+                <h3>Sign Up</h3>
                 <br>
                 <hr>
                 <br><br>
@@ -20,7 +20,7 @@
                 <br><br>
                 <input id="cpassword" name="cpassword" type="password" placeholder="Confirm Password" required />
                 <br><br><br>
-                <input type="submit" class="btn btn-primary btn-block" value="register" />
+                <input type="submit" class="btn btn-primary btn-block" value="Sign Up" />
             </form>
         </div>
     </div>

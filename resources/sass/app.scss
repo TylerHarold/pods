@@ -110,18 +110,21 @@ hr {
     border: 1px solid var(--stroke);
 }
 
-/* width */
 ::-webkit-scrollbar {
     width: 5px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
     background: var(--background);
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
     background: var(--button);
+}
+
+.card {
+    padding: 20px;
+    background: transparent;
+    border: 3px solid var(--stroke);
 }
 
