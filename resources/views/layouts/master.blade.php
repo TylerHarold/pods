@@ -18,12 +18,17 @@
 
 </head>
 
+<style>
+    body {
+        background: var(--background);
+        overflow-x: hidden;
+    }
+</style>
+
 <body>
 @include("components.header")
 
-<div class="content">
-    @yield("body")
-</div>
+@yield("body")
 
 @include("components.footer")
 </body>

@@ -15,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function() {
    Route::get('/', 'Controller@index');
+   Route::get('/login', 'Controller@login');
+   Route::get('/register', 'Controller@register');
 });
