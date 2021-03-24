@@ -82,7 +82,7 @@ a:hover {
 input {
     background: transparent;
     padding: 15px;
-    border: 5px solid var(--stroke);
+    border: 3px solid var(--stroke);
     color: var(--headline);
     width: 100%;
 }
@@ -109,3 +109,19 @@ label {
 hr {
     border: 1px solid var(--stroke);
 }
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: var(--background);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: var(--button);
+}
+
