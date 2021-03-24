@@ -41,29 +41,47 @@ p {
     color: var(--paragraph);
 }
 
+a {
+    font-weight: bold;
+    font-size: inherit;
+    color: var(--headline);
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: bold;
+    font-size: inherit;
+    color: var(--tertiary);
+    text-decoration: none;
+}
+
 .btn-primary {
-    padding: 25px;
+    padding: 15px;
     color: var(--headline);
     background-color: var(--button);
+    border: none;
 }
 
 .btn-primary:hover {
     color: var(--background);
+    background-color: var(--button);
 }
 
 .btn-secondary {
-    padding: 25px;
-    color: var(--button);
-    border: 5px solid var(--button);
+    padding: 15px;
+    color: var(--headline);
+    background-color: var(--tertiary);
+    box-sizing: border-box;
 }
 
 .btn-secondary:hover {
-    color: var(--headline);
+    color: var(--background);
+    background-color: var(--tertiary);
 }
 
 input {
     background: transparent;
-    padding: 20px;
+    padding: 15px;
     border: 5px solid var(--stroke);
     color: var(--headline);
 }
