@@ -4,11 +4,17 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
             @if(Auth::check())
                 <li class="nav-item">
-                    <a class="nav-link" href="/home">Home</a>
+                    <a class="nav-link mx-3" href="/" style="font-size: 28px;"><i class="fa fa-home"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="/search" style="font-size: 28px;"><i class="fa fa-search"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link mx-3" href="/profile" style="font-size: 28px;"><i class="fa fa-user"></i></a>
                 </li>
             @else
                 <li class="nav-item my-auto">

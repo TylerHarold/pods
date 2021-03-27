@@ -22,7 +22,8 @@ class Pod extends Model
         'creator_id',
         'short_description',
         'long_description',
-        'avatar'
+        'avatar',
+        'public'
     ];
 
     /**
@@ -40,7 +41,12 @@ class Pod extends Model
      * @var array
      */
     protected $casts = [
-        'avatar' => null
+
+    ];
+
+    protected $attributes = [
+      'avatar' => null,
+      'public' => false
     ];
 
     /**
@@ -68,5 +74,9 @@ class Pod extends Model
      */
     public function creator() {
         return $this->belongsTo('App\Models\User', 'id', 'creator_id');
+    }
+
+    public function members() {
+        return $this->hasMany('App\Models\Pod\PodUser', 'pod_id', 'id');
     }
 }

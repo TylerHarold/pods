@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
+use Illuminate\Support\Facades\DB;
+
 // Table
 // ID
 // Username
@@ -29,7 +31,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'email', 'password', 'avatar', 'administrator', 'joined_pods'
+        'username', 'email', 'password', 'avatar', 'administrator'
     ];
 
     /**
@@ -50,6 +52,9 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+    ];
+
+    protected $attributes = [
         'joined_pods' => null,
         'avatar' => null,
         'administrator' => false
@@ -70,7 +75,7 @@ class User extends Authenticatable
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function comments() {
-        return $this->hasMany('App\Models\Post\PostComment', 'author_id', 'id');
+        return $this->hasMany('App\Models\Pod\PostComment', 'author_id', 'id');
     }
 
     /**
@@ -79,6 +84,26 @@ class User extends Authenticatable
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function likes() {
-        return $this->hasMany('App\Models\Post\PostLike', 'user_id', 'id');
+        return $this->hasMany('App\Models\Pod\PostLike', 'user_id', 'id');
+    }
+
+    /**
+     * Grabs all user's information in pods
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function podUser() {
+        return $this->hasMany('App\Models\Pod\PodUser', 'user_id', 'id');
+    }
+
+    public function pods() {
+        $user_of = DB::table('pod_users')->where('user_id', $this->id)->get();
+        $user_of_ids = array();
+
+        foreach ($user_of as $u) {
+            array_push($user_of_ids, $u->pod_id);
+        }
+
+        return DB::table('pods')->whereIn('id', $user_of_ids)->get();
     }
 }

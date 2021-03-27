@@ -15,6 +15,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('/')->group(function() {
    Route::get('/', 'Controller@index');
-   Route::get('/login', 'Controller@login');
-   Route::get('/register', 'Controller@register');
+
+   Route::get('/login', 'Controller@viewLogin');
+   Route::post('/login', 'AuthenticationController@login');
+
+   Route::get('/register', 'Controller@viewRegister');
+   Route::post('/register', 'AuthenticationController@register');
+
+   Route::get('/logout', 'AuthenticationController@logout');
+
+   Route::get('/about', 'Controller@about');
+
+   Route::get('/home', 'Controller@home');
+
+   Route::prefix('/p')->group(function() {
+      Route::get('/', 'Controller@home');
+      Route::get('/{id}', 'Controller@viewPod')->middleware('isMember');
+   });
+
+   Route::prefix('/u')->group(function() {
+       Route::get('/', 'Controller@profile');
+       Route::get('/{username}', 'Controller@profile');
+   });
 });

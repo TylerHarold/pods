@@ -44,7 +44,7 @@ class AuthenticationController extends Controller
             return view('/register')->with($this->viewParams);
         }
         // If username contains invalid characters
-        if (!preg_match('/[a-zA-Z0-9_]+/', $userPayload['name'])) {
+        if (!preg_match('/[a-zA-Z0-9_]+/', $userPayload['username'])) {
             $this->viewParams['error'] = "Your username cannot contain invalid characters or spaces.";
             return view('/register')->with($this->viewParams);
         }
@@ -63,7 +63,7 @@ class AuthenticationController extends Controller
 
         Auth::login($user);
 
-        return redirect()->to('/profile');
+        return redirect()->to('/');
     }
 
     public function login(Request $request) {
@@ -96,7 +96,7 @@ class AuthenticationController extends Controller
         // Attempt to login
         Auth::attempt($userPayload);
 
-        return redirect()->to('/profile');
+        return redirect()->to('/');
     }
 
     public function logout() {

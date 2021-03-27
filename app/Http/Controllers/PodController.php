@@ -56,7 +56,7 @@ class PodController extends ApiController
         return $this->successResponse(null, 'Pod Deleted');
     }
 
-    public function validate() {
+    public function validatePod() {
         return Validator::make(request()->all(), [
            'pod_id' => 'required|integer'
         ]);

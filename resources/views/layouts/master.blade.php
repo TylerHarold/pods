@@ -26,6 +26,7 @@
 </style>
 
 <body>
+@include("components.notification")
 @include("components.header")
 
 @yield("body")

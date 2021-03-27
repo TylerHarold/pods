@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePodsTable extends Migration
+class CreatePodUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreatePodsTable extends Migration
      */
     public function up()
     {
-        Schema::create('pods', function (Blueprint $table) {
+        Schema::create('pod_users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->integer('creator_id');
-            $table->text('short_description')->nullable();
-            $table->text('long_description')->nullable();
-            $table->string('avatar')->nullable();
-            $table->boolean('public');
+            $table->integer('pod_id');
+            $table->integer('user_id');
+            $table->integer('rank_id');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreatePodsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pods');
+        Schema::dropIfExists('pod_users');
     }
 }
