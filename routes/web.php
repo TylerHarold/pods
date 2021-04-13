@@ -30,11 +30,19 @@ Route::prefix('/')->group(function() {
 
    Route::prefix('/p')->group(function() {
       Route::get('/', 'Controller@home');
-      Route::get('/{id}', 'Controller@viewPod')->middleware('isMember');
+       Route::post('/send-chat', 'ChatController@sendMessage');
+      Route::prefix('/{id}')->group(function() {
+         Route::get('/', 'Controller@viewPod')->middleware('isMember');
+      });
    });
 
    Route::prefix('/u')->group(function() {
        Route::get('/', 'Controller@profile');
        Route::get('/{username}', 'Controller@profile');
+   });
+
+   Route::prefix('/settings')->group(function() {
+      Route::get('/', 'Controller@settings');
+      Route::post('/set-avatar', 'AvatarController@setUserAvatar');
    });
 });

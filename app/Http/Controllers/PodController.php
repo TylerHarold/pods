@@ -61,4 +61,8 @@ class PodController extends ApiController
            'pod_id' => 'required|integer'
         ]);
     }
+
+    public function createInvite() {
+
+    }
 }

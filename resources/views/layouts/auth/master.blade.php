@@ -21,12 +21,18 @@
     body {
         background: var(--background);
         overflow-x: hidden;
+        overflow-y: hidden;
+        height: 100vh;
+        width: 100%;
     }
 </style>
 
 <body>
 @include("components.notification")
-@include("components.header")
+
+@component("components.auth.header")
+@slot("pageTitle") @yield("pageTitle") @endslot
+@endcomponent
 
 @yield("body")
 

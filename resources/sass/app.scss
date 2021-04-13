@@ -17,27 +17,37 @@
 
 
 h1 {
-    font-size: 67.34px;
+    font-size: 48px;
     color: var(--headline);
 }
 
 h2 {
-    font-size: 50.52px;
+    font-size: 40px;
     color: var(--headline);
 }
 
 h3 {
-    font-size: 37.90px;
+    font-size: 34px;
     color: var(--headline);
 }
 
-h4, h5, h6 {
-    font-size: 28.43px;
+h4 {
+    font-size: 28px;
+    color: var(--headline);
+}
+
+h5 {
+    font-size: 24px;
+    color: var(--headline);
+}
+
+h6 {
+    font-size: 20px;
     color: var(--headline);
 }
 
 p {
-    font-size: 28.43px;
+    font-size: 20px;
     color: var(--paragraph);
 }
 
@@ -60,6 +70,7 @@ a:hover {
     color: var(--headline);
     background-color: var(--button);
     border: none;
+    border-radius: 0px;
 }
 
 .btn-primary:hover {
@@ -72,6 +83,7 @@ a:hover {
     color: var(--headline);
     background-color: var(--tertiary);
     box-sizing: border-box;
+    border-radius: 0px;
 }
 
 .btn-secondary:hover {
@@ -125,6 +137,10 @@ hr {
 .card {
     padding: 20px;
     background: transparent;
-    border: 3px solid var(--stroke);
+    background: var(--stroke);
+    border-radius: 0px;
 }
 
+#message-container {
+    color: var(--paragraph);
+}

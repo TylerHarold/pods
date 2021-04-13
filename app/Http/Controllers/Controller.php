@@ -44,6 +44,7 @@ class Controller extends BaseController
 
     public function viewPod($id) {
         $this->viewParams['pod'] = Pod::find($id);
+        $this->viewParams['user'] = Auth::user();
         return view('pod')->with($this->viewParams);
     }
 
@@ -52,5 +53,10 @@ class Controller extends BaseController
         else $this->viewParams['user'] = Auth::user();
 
         return view('profile')->with($this->viewParams);
+    }
+
+    public function settings() {
+        $this->viewParams['user'] = Auth::user();
+        return view('settings')->with($this->viewParams);
     }
 }

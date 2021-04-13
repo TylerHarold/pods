@@ -1,4 +1,4 @@
-@extends("layouts.master")
+@extends("layouts.auth.master")
 
 @section("body")
     <div class="row m-3">
